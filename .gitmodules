@@ -1,0 +1,3 @@
+[submodule "JniHelpers"]
+	path = JniHelpers
+	url = git@github.com:bhargav/JniHelpers.git
