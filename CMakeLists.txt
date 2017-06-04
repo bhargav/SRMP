@@ -55,6 +55,9 @@ if(UNIX AND NOT APPLE)
    target_link_libraries (srmpExample LINK_PUBLIC rt)
 endif(UNIX AND NOT APPLE)
 
+# include targets for the JNI library
+add_subdirectory(jni)
+
 # install
 if(NOT DEFINED SRMP_INSTALL_LIB_DESTINATION)
    set(SRMP_INSTALL_LIB_DESTINATION lib)
