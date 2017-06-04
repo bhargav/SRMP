@@ -73,7 +73,7 @@ public class SRMPJni {
 
     public static native void Energy_AddRelaxationEdge(long cPtr, long factorA, long factorB);
 
-    public static native void Energy_IsSuperset(long factorA, long factorB);
+    public static native boolean Energy_IsSuperset(long factorA, long factorB);
 
     public static native void Energy_AddTriplet(long cPtr, int i, int j, int k, boolean addAllEdges);
 

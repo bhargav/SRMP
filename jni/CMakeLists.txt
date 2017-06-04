@@ -6,7 +6,9 @@ include_directories(${JNI_INCLUDE_DIRS})
 
 include_directories(src/main/cpp)
 
-set(SRMP_JNI_SOURCES src/main/cpp/srmp_SRMPJni.h)
+set(SRMP_JNI_SOURCES src/main/cpp/Options.cpp
+        src/main/cpp/Energy.cpp
+        src/main/cpp/srmp_SRMPJni.h)
 
 add_library(srmp-jni SHARED ${SRMP_JNI_SOURCES})
 target_link_libraries(srmp-jni ${JNI_LIBRARIES} srmp)

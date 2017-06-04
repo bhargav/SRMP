@@ -266,9 +266,9 @@ JNIEXPORT void JNICALL Java_srmp_SRMPJni_Energy_1AddRelaxationEdge
 /*
  * Class:     srmp_SRMPJni
  * Method:    Energy_IsSuperset
- * Signature: (JJ)V
+ * Signature: (JJ)Z
  */
-JNIEXPORT void JNICALL Java_srmp_SRMPJni_Energy_1IsSuperset
+JNIEXPORT jboolean JNICALL Java_srmp_SRMPJni_Energy_1IsSuperset
   (JNIEnv *, jclass, jlong, jlong);
 
 /*
