@@ -27,16 +27,16 @@ JNIEXPORT void JNICALL Java_srmp_SRMPJni_Options_1SetMethod
     Energy::Options *options = reinterpret_cast<Energy::Options*>(handle);
 
     switch (method) {
-        case 1:
+        case 0:
             options->method = Energy::Options::SRMP;
             break;
-        case 2:
+        case 1:
             options->method = Energy::Options::MPLP;
             break;
-        case 3:
+        case 2:
             options->method = Energy::Options::MPLP_BW;
             break;
-        case 4:
+        case 3:
             options->method = Energy::Options::CMP;
             break;
         default:

@@ -121,25 +121,25 @@ JNIEXPORT jlong JNICALL Java_srmp_SRMPJni_Energy_1AddFactor
     Energy::FactorType *factor_type = NULL;
 
     switch (type) {
-        case 1:
+        case 0:
             factor_type = new PottsFactorType();
             break;
-        case 2:
+        case 1:
             factor_type = new PairwiseFactorType();
             break;
-        case 3:
+        case 2:
             factor_type = new PairwiseDualFactorType();
             break;
-        case 4:
+        case 3:
             factor_type = new PatternFactorType();
             break;
-        case 5:
+        case 4:
             // XXX SharedPairwiseFactorType is an abstract class.
 //            int k1 = energy->GetK(native_node_indices[0]);
 //            int k2 = energy->GetK(native_node_indices[1]);
 //            factor_type = new SharedPairwiseFactorType(k1, k2, native_costs);
             break;
-        case 6:
+        case 5:
         default:
             factor_type = new GeneralFactorType();
             break;
