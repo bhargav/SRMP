@@ -19,6 +19,17 @@ JNIEXPORT jlong JNICALL Java_srmp_SRMPJni_Options
 
 /*
  * Class:     srmp_SRMPJni
+ * Method:    Options_Dispose
+ * Signature: (J)V
+ */
+JNIEXPORT void JNICALL Java_srmp_SRMPJni_Options_1Dispose
+        (JNIEnv *env, jclass cls, jlong handle) {
+    Energy::Options *options = reinterpret_cast<Energy::Options *>(handle);
+    delete options;
+}
+
+/*
+ * Class:     srmp_SRMPJni
  * Method:    Options_SetMethod
  * Signature: (JI)V
  */

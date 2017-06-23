@@ -6,6 +6,7 @@ repositories {
 }
 
 dependencies {
+    compile 'org.scijava:native-lib-loader:2.1.5'
     testImplementation 'junit:junit:4.12'
 }
 

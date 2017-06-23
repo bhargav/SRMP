@@ -81,4 +81,10 @@ public final class Energy {
     public static boolean isSuperset(Factor factorA, Factor factorB) {
         return SRMPJni.Energy_IsSuperset(factorA.factorId, factorB.factorId);
     }
+
+    @Override
+    protected void finalize() throws Throwable {
+        SRMPJni.Energy_Dispose(this.nativeHandle);
+        super.finalize();
+    }
 }

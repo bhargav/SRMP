@@ -1,13 +1,36 @@
 package srmp;
 
+import org.scijava.nativelib.NativeLoader;
+
+import java.io.IOException;
+
 public class SRMPJni {
+    private static final String nativeLibraryName = "srmp-jni";
+
     static {
-        System.loadLibrary("srmp-jni");
+        boolean loadFromLibraryPath = false;
+
+        try {
+            System.loadLibrary(nativeLibraryName);
+            loadFromLibraryPath = true;
+        } catch (UnsatisfiedLinkError err) {
+            // Log this.
+        }
+
+        if (!loadFromLibraryPath) {
+            try {
+                NativeLoader.loadLibrary(nativeLibraryName);
+            } catch (IOException ex) {
+                System.out.println("Unable to load the native library!");
+            }
+        }
     }
 
     // Energy::Options class
 
     public static native long Options();
+
+    public static native void Options_Dispose(long cPtr);
 
     public static native void Options_SetMethod(long cPtr, int method);
 
@@ -48,6 +71,8 @@ public class SRMPJni {
     // Energy class
 
     public static native long Energy(int node_num_max);
+
+    public static native void Energy_Dispose(long cPtr);
 
     public static native int Energy_AddNode(long cPtr, int K, double[] costs);
 

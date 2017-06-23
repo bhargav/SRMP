@@ -26,6 +26,17 @@ JNIEXPORT jlong JNICALL Java_srmp_SRMPJni_Energy
 
 /*
  * Class:     srmp_SRMPJni
+ * Method:    Energy_Dispose
+ * Signature: (J)V
+ */
+JNIEXPORT void JNICALL Java_srmp_SRMPJni_Energy_1Dispose
+        (JNIEnv *env, jclass cls, jlong handle) {
+    Energy *energy = reinterpret_cast<Energy *>(handle);
+    delete energy;
+}
+
+/*
+ * Class:     srmp_SRMPJni
  * Method:    Energy_AddNode
  * Signature: (JI[D)I
  */

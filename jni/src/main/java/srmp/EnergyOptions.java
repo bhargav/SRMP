@@ -83,4 +83,10 @@ public final class EnergyOptions {
     public void setTrwsWeighting(double trwsWeighting) {
         SRMPJni.Options_SetTRWSWeighting(this.nativeHandle, trwsWeighting);
     }
+
+    @Override
+    protected void finalize() throws Throwable {
+        SRMPJni.Options_Dispose(this.nativeHandle);
+        super.finalize();
+    }
 }

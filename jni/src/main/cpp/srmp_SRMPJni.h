@@ -17,6 +17,14 @@ JNIEXPORT jlong JNICALL Java_srmp_SRMPJni_Options
 
 /*
  * Class:     srmp_SRMPJni
+ * Method:    Options_Dispose
+ * Signature: (J)V
+ */
+JNIEXPORT void JNICALL Java_srmp_SRMPJni_Options_1Dispose
+  (JNIEnv *, jclass, jlong);
+
+/*
+ * Class:     srmp_SRMPJni
  * Method:    Options_SetMethod
  * Signature: (JI)V
  */
@@ -166,6 +174,14 @@ JNIEXPORT jdouble JNICALL Java_srmp_SRMPJni_Options_1GetTRWSWeighting
  */
 JNIEXPORT jlong JNICALL Java_srmp_SRMPJni_Energy
   (JNIEnv *, jclass, jint);
+
+/*
+ * Class:     srmp_SRMPJni
+ * Method:    Energy_Dispose
+ * Signature: (J)V
+ */
+JNIEXPORT void JNICALL Java_srmp_SRMPJni_Energy_1Dispose
+  (JNIEnv *, jclass, jlong);
 
 /*
  * Class:     srmp_SRMPJni
