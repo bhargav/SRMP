@@ -1,8 +1,6 @@
 package srmp;
 
-import org.scijava.nativelib.NativeLoader;
-
-import java.io.IOException;
+import org.scijava.nativelib.NativeLibraryUtil;
 
 public class SRMPJni {
     private static final String nativeLibraryName = "srmp-jni";
@@ -18,11 +16,7 @@ public class SRMPJni {
         }
 
         if (!loadFromLibraryPath) {
-            try {
-                NativeLoader.loadLibrary(nativeLibraryName);
-            } catch (IOException ex) {
-                System.out.println("Unable to load the native library!");
-            }
+            NativeLibraryUtil.loadNativeLibrary(SRMPJni.class, nativeLibraryName);
         }
     }
 
