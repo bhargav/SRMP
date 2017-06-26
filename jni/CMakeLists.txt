@@ -10,8 +10,8 @@ set(SRMP_JNI_SOURCES src/main/cpp/Options.cpp
         src/main/cpp/Energy.cpp
         src/main/cpp/srmp_SRMPJni.h)
 
-add_library(srmp-jni SHARED ${SRMP_JNI_SOURCES})
-target_link_libraries(srmp-jni ${JNI_LIBRARIES} srmp)
+add_library(srmp-jni SHARED ${SRMP_JNI_SOURCES} ${SRMP_SRC_FILES})
+target_include_directories (srmp-jni PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/../include)
 
 if(${UNIX})
     set(CMAKE_CXX_FLAGS "-fPIC")
